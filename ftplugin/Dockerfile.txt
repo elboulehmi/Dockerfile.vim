@@ -1,0 +1,24 @@
+# Pull base image
+FROM resin/rpi-raspbian:wheezy
+MAINTAINER Vincent RABAH <vincent.rabah@gmail.com>
+
+# Install Node.js (from tarball)
+RUN \
+        apt-get update && \
+        apt-get -y dist-upgrade && \
+        apt-get install -y wget && \
+        wget http://node-arm.herokuapp.com/node_latest_armhf.deb && \
+        dpkg -i node_latest_armhf.deb && \
+        apt-get remove -y wget && \
+        apt-get clean -y && \
+        apt-get autoclean -y && \
+        apt-get autoremove -y && \
+        rm -f node_latest_armhf.deb && \
+        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+       rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+# Define working directory
+WORKDIR /data
+
+# Define default command
+CMD ["bash"]
