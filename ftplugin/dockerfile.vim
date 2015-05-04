@@ -1,1 +1,1 @@
-autocmd bufnewfile Dockerfile so Dockerfile.txt
+autocmd bufnewfile dockerfile so Dockerfile.txt

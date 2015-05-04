@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead Dockerfile setfiletype Dockerfile
+autocmd BufNewFile,BufRead Dockerfile setfiletype dockerfile
