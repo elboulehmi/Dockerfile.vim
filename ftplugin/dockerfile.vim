@@ -1,4 +1,4 @@
-if has("autocmd")
+"if has("autocmd")
 augroup autoinsert
   au!
   autocmd BufNewFile *.c call s:Template("c")
@@ -6,7 +6,7 @@ augroup autoinsert
   autocmd BufNewFile makefile call s:Template("make-simple")
   autocmd BufNewFile Dockerfile call s:Template("dockerfile")
 augroup END
-endif
+"endif
  
 function s:Template(argument)
         if (a:argument == "help")
